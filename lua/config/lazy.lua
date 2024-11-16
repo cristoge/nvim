@@ -21,9 +21,25 @@ require("lazy").setup({
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     --import any extra modules here
     { import = "lazyvim.plugins.extras.lang.typescript" },
+    { import = "lazyvim.plugins.extras.ai.copilot-chat" },
     --{ import = "lazyvim.plugins.extras.ai.copilot" },
     -- import/override with your plugins
     { import = "plugins" },
+    {
+      "nvim-neo-tree/neo-tree.nvim",
+      cmd = "Neotree", -- Lazy-load cuando se ejecute el comando Neotree
+      config = function()
+        require("neo-tree").setup({
+          window = {
+            width = 27, -- Ajusta el tamaño de la ventana de NeoTree
+            position = "left", -- Coloca NeoTree a la izquierda
+          },
+          filesystem = {
+            follow_current_file = { enabled = true }, -- Sigue el archivo que estás editando
+          },
+        })
+      end,
+    },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
