@@ -26,12 +26,19 @@ return {
     "embark-theme/vim",
     as = "embark",
   },
-
+  {
+    "baliestri/aura-theme",
+    lazy = false, -- Se carga inmediatamente
+    priority = 1000, -- Se carga primero
+    init = function(plugin)
+      vim.opt.rtp:append(plugin.dir .. "/packages/neovim") -- Agrega el tema al runtimepath
+    end,
+  },
   -- somewhere in your config
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "onedark_vivid",
+      colorscheme = "aura-soft-dark",
     },
   },
 }

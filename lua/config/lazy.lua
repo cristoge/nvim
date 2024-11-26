@@ -13,6 +13,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   end
 end
 vim.opt.rtp:prepend(lazypath)
+vim.opt.list = false
 
 require("lazy").setup({
   spec = {
@@ -21,8 +22,8 @@ require("lazy").setup({
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     --import any extra modules here
     { import = "lazyvim.plugins.extras.lang.typescript" },
-    { import = "lazyvim.plugins.extras.ai.copilot-chat" },
-    --{ import = "lazyvim.plugins.extras.ai.copilot" },
+    --{ import = "lazyvim.plugins.extras.ai.copilot-chat" },
+    { import = "lazyvim.plugins.extras.ai.copilot" },
     -- import/override with your plugins
     { import = "plugins" },
     {
