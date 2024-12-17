@@ -7,6 +7,12 @@ return {
     priority = 1000, -- Ensure it loads first
   },
   {
+    "2giosangmitom/nightfall.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+  {
     "olivercederborg/poimandres.nvim",
     lazy = false,
     priority = 1000,
@@ -38,7 +44,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "aura-soft-dark",
+      colorscheme = "deepernight",
     },
   },
 }
